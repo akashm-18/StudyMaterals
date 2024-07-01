@@ -1,0 +1,114 @@
+ARRAY - EASY
+
+1) https://leetcode.com/problems/two-sum/
+2) https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+3) https://leetcode.com/problems/remove-element/
+4) https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+5) https://leetcode.com/problems/contains-duplicate/							
+6) https://leetcode.com/problems/squares-of-a-sorted-array/
+7) https://leetcode.com/problems/missing-number/
+8) https://leetcode.com/problems/add-strings/
+9) https://leetcode.com/problems/find-pivot-index/
+10) https://leetcode.com/problems/smallest-index-with-equal-value/
+11) https://leetcode.com/problems/plus-one/
+12) https://leetcode.com/problems/sign-of-the-product-of-an-array/
+13) https://leetcode.com/problems/find-the-difference-of-two-arrays/
+14) https://leetcode.com/problems/number-of-good-pairs/
+15) https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
+16) https://leetcode.com/problems/shuffle-the-array/
+17) https://leetcode.com/problems/number-of-employees-who-met-the-target/
+18) https://leetcode.com/problems/richest-customer-wealth/
+19) https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/
+20) https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/
+21) https://leetcode.com/problems/running-sum-of-1d-array/
+22) https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+23) https://leetcode.com/problems/left-and-right-sum-differences/	
+24) https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/
+25) https://leetcode.com/problems/difference-between-element-sum-and-digit-sum-of-an-array/
+26) https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
+27) https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/
+28) https://leetcode.com/problems/number-of-arithmetic-triplets/
+
+
+
+ARRAY - MEDIUM
+
+1) https://leetcode.com/problems/product-of-array-except-self/
+2) https://leetcode.com/problems/maximum-subarray/
+3) https://leetcode.com/problems/maximum-product-subarray/
+4) https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+5) https://leetcode.com/problems/3sum/
+6) https://leetcode.com/problems/container-with-most-water/
+7) https://leetcode.com/problems/rotate-array/								
+8) https://leetcode.com/problems/merge-intervals/
+9) https://leetcode.com/problems/subarray-sum-equals-k/
+10) https://leetcode.com/problems/sort-colors/
+11) https://leetcode.com/problems/find-peak-element/
+12) https://leetcode.com/problems/rearrange-array-elements-by-sign/
+13) https://leetcode.com/problems/jump-game/
+
+ARRAY  - HARD
+
+1) https://leetcode.com/problems/candy/									
+
+
+
+ARRAY - 2D - MEDIUM
+
+1) https://leetcode.com/problems/set-matrix-zeroes/
+2) https://leetcode.com/problems/spiral-matrix/								
+3)https://leetcode.com/problems/rotate-image/
+
+
+MATH - EASY
+
+1) https://leetcode.com/problems/palindrome-number/							
+
+
+
+STRINGS - EASY
+
+1) https://leetcode.com/problems/valid-anagram/
+2) https://leetcode.com/problems/valid-parentheses/							
+3) https://leetcode.com/problems/valid-palindrome/
+4) https://leetcode.com/problems/longest-common-prefix/
+5) https://leetcode.com/problems/reverse-string/
+6) https://leetcode.com/problems/reverse-words-in-a-string-iii/
+7) https://leetcode.com/problems/largest-odd-number-in-string/
+8) https://leetcode.com/problems/rotate-string/
+9) https://leetcode.com/problems/isomorphic-strings/
+10) https://leetcode.com/problems/remove-outermost-parentheses/
+11) https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/
+12) https://leetcode.com/problems/roman-to-integer/
+13) https://leetcode.com/problems/merge-strings-alternately/
+14) https://leetcode.com/problems/maximum-number-of-words-found-in-sentences/
+
+
+
+STRINGS - MEDIUM
+
+1) https://leetcode.com/problems/longest-substring-without-repeating-characters/
+2) https://leetcode.com/problems/longest-palindromic-substring/						
+3) https://leetcode.com/problems/palindromic-substrings/
+4) https://leetcode.com/problems/reverse-words-in-a-string/
+5) https://leetcode.com/problems/sort-characters-by-frequency/
+6) https://leetcode.com/problems/string-to-integer-atoi/
+
+
+BINARYSEARCH - EASY
+
+1) https://leetcode.com/problems/search-insert-position/						
+
+
+
+BINARYSEARCH - MEDIUM
+
+1) https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+2) https://leetcode.com/problems/search-in-rotated-sorted-array/
+3) https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/				
+4) https://leetcode.com/problems/search-in-rotated-sorted-array-ii/
+5) https://leetcode.com/problems/single-element-in-a-sorted-array/
+
+LINKEDLIST - EASY
+
+1) https://leetcode.com/problems/reverse-linked-list/							

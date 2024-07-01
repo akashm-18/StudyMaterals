@@ -1,0 +1,8 @@
+Primary Key : 
+
+Unique 
+Not be Duplicate in Tables
+cannot be Null or Blank
+We Must Have Primary key in each record in the table
+Each table have only one Primary Key 
+It can be one column or multiple column

@@ -1,0 +1,21 @@
+git init	// to initialize the repo
+
+git remote add origin git@github.com:akashm-18/dummyrepo.git	// copy this code from github dont use this code
+
+git branch -M main	// replace main with branch name if needed
+
+git add folderone/	// git add * (to add all files)
+
+git commit -m "folderOne added"   // to commit the code with message
+
+git push -u origin main    // replace main with the branch name (origin refers to remote repo)
+
+
+
+// version control
+
+git branch	// to get branch status
+
+git branch testTwo   // to add new branch
+
+git checkout testTwo   // to switch to the new branch

@@ -1,0 +1,22 @@
+PROBLEM - 3
+
+how many pencil sold in the month of January
+
+SELLING --> TABLE
+
+Item_no 	Item 		   sold 	no_of_items
+
+1 		 pen 		1-jan-2017 	 14
+3 		 pencil 	2-feb-2017 	 10
+3 		 pencil 	06-jan-2017 	 7
+2 		 pen 		20-feb-2017 	 10
+
+
+SELECT 
+SUM(S.NO_OF_ITEMS)
+S.ITEM,
+S.ITEM_NO
+FROM SELLING S
+WHERE S.SOLD LIKE '%JAN%'
+GROUP BY ITEM_NO,ITEM
+

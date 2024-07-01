@@ -1,0 +1,54 @@
+url - https://techtfq.com/blog/learn-how-to-write-sql-queries-practice-complex-sql-queries
+
+more queries :
+
+1) Write a SQL Query to fetch all the duplicate records in a table.
+
+SELECT * ,
+ROLL_NUMBER() OVER (PARTITION BY USER_NAME ORDER BY USER_ID) AS RN
+FROM USERS
+ORDER BY USER_ID                ---> IT WILL GETS THE ROLLNUMNER USING THE WINDOW ROLLNUMBER() FUNCTION
+
+SELECT USER_ID , USERNAME , EMAIL
+FROM (
+SELECT * ,
+ROLL_NUMBER() OVER (PARTITION BY USER_NAME ORDER BY USER_ID) AS RN
+FROM USERS
+ORDER BY USER_ID  
+) X
+WHERE X.RN > 1;
+
+
+2) Write a SQL query to fetch the second last record from employee table.
+
+SELECT * 
+FROM EMPLOYEE 
+ORDER BY EMP_ID DESC
+LIMIT 1 OFFSET 1                ----> BASIC APROACH
+
+
+SELECT * 
+FROM (
+SELECT * ,
+ROLL_NUMBER() OVER (ORDER BY EMP_ID DESC) AS RN      --> USING THE WINDOW FUNCTION 
+FROM EMPLOYEE
+) X
+WHERE X.RN = 2;
+
+
+3) Write a SQL query to display only the details of employees who either earn the highest 
+     salary or the lowest salary in each department from the employee table.
+
+
+SELECT X.*
+FROM EMPLOYEE E 
+JOIN
+( SELECT * ,
+MAX(SALARY) OVER (PARTITION BY DEPT_NAME) AS MAX_SALARY
+MIN(SALARY) OVER (PARTITION BY DEPT_NAME) AS MIN_SALARY
+FROM EMPLOYEE ) X
+ON E.EMP_ID = X.EMP_ID
+AND (E.SALARY = X.MAX_SALARY OR E.SALARY = X.MIN_SALARY)
+ORDER BY X.SALARY , X.DEPT_NAME
+
+

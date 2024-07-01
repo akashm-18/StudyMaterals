@@ -1,0 +1,41 @@
+JOINS 
+
+
+In a relational database management system (RDBMS), joins are used to combine rows from two or more tables based on related columns between them. Joins are fundamental to relational databases as they allow for the retrieval of data from multiple tables in a single query. There are different types of joins, each serving a specific purpose. Here are the main types of joins:
+
+INNER JOIN:
+
+Syntax: SELECT * FROM table1 INNER JOIN table2 ON table1.column = table2.column;
+
+Description: Returns only the rows that have matching values in both tables. Rows without matches in either table are excluded from the result set.
+
+LEFT (OUTER) JOIN:
+
+Syntax: SELECT * FROM table1 LEFT JOIN table2 ON table1.column = table2.column;
+
+Description: Returns all rows from the left table (table1), and the matched rows from the right table (table2). If there is no match in the right table, NULL values are returned.
+
+RIGHT (OUTER) JOIN:
+
+Syntax: SELECT * FROM table1 RIGHT JOIN table2 ON table1.column = table2.column;
+Description: Returns all rows from the right table (table2), and the matched rows from the left table (table1). If there is no match in the left table, NULL values are returned.
+
+FULL (OUTER) JOIN:
+
+Syntax: SELECT * FROM table1 FULL JOIN table2 ON table1.column = table2.column;
+Description: Returns all rows when there is a match in either the left or right table. If there is no match, NULL values are returned for columns from the table without a match.
+
+CROSS JOIN:
+
+Syntax: SELECT * FROM table1 CROSS JOIN table2;
+Description: Returns the Cartesian product of both tables, meaning every row from the first table is combined with every row from the second table. It doesn't require a condition.
+
+SELF JOIN:
+
+Syntax: SELECT * FROM table1 t1 INNER JOIN table1 t2 ON t1.column = t2.column;
+Description: Joins a table with itself. Useful when you want to compare rows within the same table.
+
+NATURAL JOIN:
+
+Syntax: SELECT * FROM table1 NATURAL JOIN table2;
+Description: Performs a join based on columns with the same name in both tables. It is an implicit join based on common column names.

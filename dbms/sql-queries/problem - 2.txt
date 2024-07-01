@@ -1,0 +1,62 @@
+problem - 2
+
+Please create tables to store the name of players, their countries and their last 5 scores.
+Identify the primary and foreign key as well as the list the players who have
+scored more than 3 Fifties or 1 century in the last 5 matches.
+The creation can be in terms of a simple table, no need for commands.
+The Select query must be SQL.
+
+CREATE TABLE PLAYERS (
+PLAYERID INT PRIMARY KEY,
+PLAYERNAME VARCHAR(50) NOT NULL,
+COUNTRY VARCHAR(50) NOT NULL
+)
+
+CREATE TABLE SCORES (
+SCOREID INT PRIMARY KEY,
+PLAYERID INT,
+MATCHNUMBER INT,
+SCORE INT,
+FORIEGN KEY (PLAYERID) REFERENCES PLAYERS(PLAYERID)
+)
+
+INSERT INTO PLAYERS(PLAYERID,PLAYERNAME,COUNTRY) VALUES
+(1,'VIRAT','INDIA'),
+(2,'SMITH','AUSTRALIA'),
+
+INSERT INTO SCORES(SCOREID,PLAYERID,MATCHNUMBER,SCORE) VALUES 
+(1,1,1,82),
+(2,1,2,120),
+(3,1,3,128),
+(4,1,4,32),
+(5,1,5,48),
+(6,2,1,60),
+(7,2,2,100),
+(8,2,3,30),
+(9,2,4,90),
+(10,2,5,60)
+
+SELECT 
+P.PLAYERNAME ,
+P.COUNTRY,
+COUNT(CASE WHEN S.SCORE >= 50 AND S.SCORE < 100 THEN 1 END) AS 'FIFTY COUNT',
+COUNT(CASE WHEN S.SCORE >= 100 THEN 1 END) AS 'CENTURY COUNT'
+FROM PLAYERS P
+JOIN SCORES S
+ON P.PLAYERID = S.PLAYERID
+WHERE S.MATCHNUMBER >= 1 AND S.MATCHNUMBER <= 5
+HAVING 
+COUNT(CASE WHEN S.SCORE >= 50 AND S.SCORE < 100 THEN 1 END) > 3
+OR
+COUNT(CASE WHEN S.SCORE >= 100 THEN 1 END) > 0
+
+
+
+
+
+
+
+
+
+
+

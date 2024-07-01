@@ -1,0 +1,51 @@
+DBMS - RDBMS 
+
+
+Database Management System (DBMS) and Relational Database Management System (RDBMS) are related concepts, but there are distinctions between them:
+
+Database Management System (DBMS):
+
+Definition: A DBMS is a software that provides an interface to interact with databases and manage the storage, retrieval, and organization of data.
+Characteristics:
+Manages data in files or tables.
+Supports basic operations like data insertion, retrieval, modification, and deletion.
+Provides data integrity and security features.
+Doesn't necessarily enforce relationships between tables.
+Examples: File systems, hierarchical databases, network databases, and some early relational database systems.
+
+
+Relational Database Management System (RDBMS):
+
+Definition: An RDBMS is a type of DBMS that manages data in a tabular format with rows and columns. It enforces the relational model, where data is organized in tables with defined relationships between them.
+Characteristics:
+Organizes data into tables with rows (records) and columns (attributes).
+Enforces the principles of the relational model, including the use of primary keys, foreign keys, and normalization.
+Supports complex queries using SQL (Structured Query Language).
+Provides data integrity through the use of constraints.
+Examples: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server, SQLite.
+Key Differences:
+
+
+Data Organization:
+
+DBMS: Organizes data in files or tables but doesn't enforce a specific structure.
+RDBMS: Enforces the relational model, organizing data in tables with predefined relationships.
+Data Integrity:
+
+DBMS: Provides basic data integrity features but may not enforce relationships or constraints.
+RDBMS: Enforces data integrity through the use of primary keys, foreign keys, and constraints.
+Query Language:
+
+DBMS: Supports basic data manipulation operations.
+RDBMS: Supports SQL for complex queries, including JOIN operations.
+Relationships:
+
+DBMS: Doesn't necessarily enforce relationships between tables.
+RDBMS: Enforces relationships between tables using keys.
+Examples:
+
+DBMS: File systems, hierarchical databases, early database systems.
+RDBMS: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server.
+
+
+In summary, an RDBMS is a specialized type of DBMS that adheres to the principles of the relational model, providing a more structured and organized approach to data management. RDBMS systems are widely used for their flexibility, scalability, and support for complex queries and transactions.

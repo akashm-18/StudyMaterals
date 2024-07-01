@@ -1,0 +1,182 @@
+Normalization in DBMS:
+  		
+	Normalization in the context of databases refers to the process of organizing the data in a database to reduce redundancy and improve data integrity.
+	The normalization process involves breaking down large tables into smaller, more manageable tables and establishing relationships between them.
+	The primary goals of normalization are to eliminate data anomalies, improve data integrity, and make the database more efficient.
+
+	There are several normal forms (1NF, 2NF, 3NF, BCNF, 4NF, 5NF, 6NF), each with its own set of rules and guidelines.
+
+First Normalization : 
+	
+	First Normal Form (1NF) is a fundamental concept in database normalization, and it ensures that the values in each column of a table are atomic and indivisible.
+	In other words, there should be no repeating groups or arrays within a single cell
+	Each column should contain only simple, indivisible values.
+	
+	StudentID	StudentName	Courses
+	1		John		Math, Physics
+	2		Jane		Chemistry, Biology
+	3		Bob		Math, Chemistry, Biology
+	
+	In this example, the "Courses" column violates 1NF because it contains multiple values separated by commas.
+	This violates the principle of atomicity. 
+	To bring it into 1NF, we need to break down the "Courses" column into separate rows for each course, creating a new table
+
+	Original Table :
+	
+	StudentID	StudentName	Courses
+	1		John		Math, Physics
+	2		Jane		Chemistry, Biology
+	3		Bob		Math, Chemistry, Biology
+	
+	Normalized Tables :
+	
+	Students Table:
+
+	StudentID	StudentName
+	1		John
+	2		Jane
+	3		Bob
+	
+	Courses Table:
+
+	StudentID	Course
+	1		Math
+	1		Physics
+	2		Chemistry
+	2		Biology
+	3		Math
+	3		Chemistry
+	3		Biology
+	
+	Now, the data is in 1NF because each column contains only atomic values, and there are no repeating groups. 
+	This separation of tables also allows for better organization, easier querying, and avoids redundancy.
+
+Second Normalization :
+	
+	Second Normal Form (2NF) builds upon the concepts of First Normal Form (1NF) by addressing partial dependencies within a table.
+	In 2NF, a table must first satisfy the requirements of 1NF, and then it must eliminate partial dependencies.
+	
+	Partial dependency occurs when a non-prime attribute (an attribute that is not part of any candidate key) is functionally dependent on only part of the primary key. 
+	The goal of 2NF is to ensure that all non-prime attributes are fully functionally dependent on the entire primary key.
+	
+	Original Table: StudentCourses
+
+	StudentID	CourseID	Instructor
+	1		101		Mr. Smith
+	1		102		Mr. Johnson
+	2		101		Mrs. Davis
+	2		103		Mr. Smith
+	3		102		Mr. Johnson
+	
+	In this example, the composite primary key is (StudentID, CourseID).
+	The attribute "Instructor" is functionally dependent on only part of the primary key (CourseID), indicating a partial dependency. 
+	To achieve 2NF, we need to break the table into two:
+
+	Normalized Tables: Students and Courses
+
+	Students Table:
+
+	StudentID	StudentName
+	1		John
+	2		Jane
+	3		Bob
+	
+	Courses Table:
+
+	CourseID	Instructor
+	101		Mr. Smith
+	102		Mr. Johnson
+	103		Mrs. Davis
+	
+	Enrollments Table (Relates Students to Courses):
+
+	StudentID	CourseID
+	1		101
+	1		102
+	2		101
+	2		103
+	3		102
+		
+	Now, "Instructor" is dependent on the entire primary key in the "Courses" table, and the "Enrollments" table establishes the relationship between students and courses. 
+	This satisfies the requirements of 2NF because there are no partial dependencies in the tables, and each non-prime attribute is fully dependent on the entire primary key.
+
+
+
+Third Normalization :	
+	
+	Third Normal Form (3NF) is the next level of database normalization, and it builds upon the concepts of First Normal Form (1NF) and Second Normal Form (2NF). 
+	In 3NF, a table must first satisfy the requirements of 2NF, and then it must eliminate transitive dependencies.
+	
+	A transitive dependency occurs when a non-prime attribute is functionally dependent on another non-prime attribute rather than directly on the primary key.
+	
+	Original Table: StudentCoursesInstructors
+
+	StudentID	CourseID	Instructor	InstructorOffice
+	1		101		Mr. Smith	Room 101
+	1		102		Mr. Johnson	Room 102
+	2		101		Mrs. Davis	Room 103
+	2		103		Mr. Smith	Room 101
+	3		102		Mr. Johnson	Room 102
+	
+	In this example, "InstructorOffice" is functionally dependent on "Instructor," which is not part of the primary key. 
+	This creates a transitive dependency. To achieve 3NF, we need to break the table into multiple tables:
+	
+	Normalized Tables: Students, Courses, Instructors
+
+	Students Table:
+
+	StudentID	StudentName
+	1		John
+	2		Jane
+	3		Bob
+	
+	Courses Table:
+
+	CourseID	Instructor
+	101		Mr. Smith
+	102		Mr. Johnson
+	103		Mrs. Davis
+
+	Instructors Table:
+
+	Instructor	InstructorOffice
+	Mr. Smith	Room 101
+	Mr. Johnson	Room 102
+	Mrs. Davis	Room 103
+	
+
+	Enrollments Table (Relates Students to Courses):
+
+	StudentID	CourseID
+	1		101
+	1		102
+	2		101
+	2		103
+	3		102
+	
+	Now, each table has a clear purpose, and there are no transitive dependencies. 
+	"InstructorOffice" is now directly dependent on the primary key of the "Instructors" table, satisfying the requirements of 3NF
+	This structure reduces redundancy, improves data integrity, and simplifies the database design.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

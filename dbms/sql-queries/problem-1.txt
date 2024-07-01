@@ -1,0 +1,45 @@
+Problem - 1
+
+A database contains the names of Customers , their Accounts, Deposits and Loans
+in the following format
+
+CUSTOMER --> TABLE NAME 
+
+Name        Type of Contract      Balance
+
+Ganesh         Account             1000
+Biju           Account              500
+Ganesh          Loan               2000
+Biju            Loan               5000
+Ganesh         Deposit            10000
+
+
+Produce a report as follows (Use a program or a SQL statement. No need to write a
+program to create the data, assume that it is already available in the above table)
+
+Name, Number of Accounts, Number of Deposits, Number of Loans, Holdings
+(Sum of Positive Account Balances, Deposits), Borrowings (Sum of Negative
+Account Balances, Loans), Positive/Negative (If Total of Holding is less than
+Borrowings then Negative else Positive) and the Totals.
+
+
+SQL - QUERY
+
+SELECT NAME ,
+COUNT(DISTINCT CASE WHEN [TYPE OF CONTRACT] = 'ACCOUNT' THEN [TYPE OF CONTRACT] ELSE 0 END) AS 'NUMBER OF ACCOUNTS'
+COUNT(DISTINCT CASE WHEN [TYPE OF CONTRACT] = 'DEPOSIT' THEN [TYPE OF CONTRACT] ELSE 0 END) AS 'NUMBER OF DEPOSITS'
+COUNT(DISTINCT CASE WHEN [TYPE OF CONTRACT] = 'LOAN' THEN [TYPE OF CONTRACT] ELSE 0 END) AS 'NUMBER OF LOANS'
+
+SUM(CASE WHEN BALANCE > 0 AND [TYPE OF CONTRACT] = 'ACCOUNT' THEN BALANCE ELSE 0 END)  + 
+    SUM(CASE WHEN BALANCE > 0 AND [TYPE OF CONTRACT] = 'DEPOSIT' THEN BALANCE ELSE 0 END) AS 'HOLDINGS'
+
+ABS(SUM(CASE WHEN BALANCE < 0 AND [TYPE OF CONTRACT] = 'LOAN' THEN BALANCE ELSE 0 END)) AS 'BORROWINGS'
+
+CASE WHEN 
+SUM(CASE WHEN BALANCE > 0 AND [TYPE OF CONTRACT] = 'ACCOUNT' THEN BALANCE ELSE 0 END)  + 
+    SUM(CASE WHEN BALANCE > 0 AND [TYPE OF CONTRACT] = 'DEPOSIT' THEN BALANCE ELSE 0 END) <
+    ABS(SUM(CASE WHEN BALANCE < 0 AND [TYPE OF CONTRACT] = 'LOAN' THEN BALANCE ELSE 0 END)) THEN 'NEGATIVE' ELSE 'POSITIVE' END AS 'POSITIVE/NEGATIVE'
+FROM CUSTOMER
+GROUP BY NAME
+WITH ROLL UP;
+
